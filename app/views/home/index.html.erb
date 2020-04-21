@@ -1,0 +1,15 @@
+<h1>Hello world </h1>
+<p>itty bitty baby itty bitty boat</p>
+
+<br/><br/>
+
+<% @coins %>
+
+<% for x in @coins['data'] %>
+    <% for coin in @my_coins %>
+        <% if coin == x['symbol'] %>
+            <%= x['name'] %>: <%= x['quote']['USD']['price'] %> <br/>
+            Rank: <%= x['cmc_rank'] %><br/><br/>
+        <% end %>
+    <% end %>
+<% end %>
