@@ -1,16 +1,16 @@
 class HomeController < ApplicationController
-  def index
-  	require 'net/http'
-  	require 'json'
+    def index
+    	require 'net/http'
+    	require 'json'
 
-  	@url = 'https://min-api.cryptocompare.com/data/v2/news/?lang=EN&api_key={73700d20cab257ca1696d80644bb6430f8857b022480989a3a3ddb625505b6c3}'
-    @uri = URI(@url)
-    @response = Net::HTTP.get(@uri)
-    @news = JSON.parse(@response)
-  end
+    	@url = 'https://min-api.cryptocompare.com/data/v2/news/?lang=EN&api_key={73700d20cab257ca1696d80644bb6430f8857b022480989a3a3ddb625505b6c3}'
+      @uri = URI(@url)
+      @response = Net::HTTP.get(@uri)
+      @news = JSON.parse(@response)
+    end
 
-  def about
-  end
+    def about
+    end
 
   def lookup
   	require 'net/http'
@@ -27,7 +27,7 @@ class HomeController < ApplicationController
 
   	if @symbol	== ""
   		@symbol = "Nothing Entered in form!"
-	end
+	   end
   end 
 
 end
