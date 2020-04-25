@@ -91,4 +91,3 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'https://cloudappcrypto.herokuapp.com/cryptos' }
 end
 
-end
