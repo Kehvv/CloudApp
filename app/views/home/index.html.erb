@@ -1,15 +1,39 @@
-<h1>Hello world </h1>
-<p>itty bitty baby itty bitty boat</p>
+<h1>Latest Crypto News</h1>
 
-<br/><br/>
+</br>
+</br>
 
-<% @coins %>
+<% @news["Data"] %>
 
-<% for x in @coins['data'] %>
-    <% for coin in @my_coins %>
-        <% if coin == x['symbol'] %>
-            <%= x['name'] %>: <%= x['quote']['USD']['price'] %> <br/>
-            Rank: <%= x['cmc_rank'] %><br/><br/>
-        <% end %>
-    <% end %>
-<% end %>
+<div class="container-fluid" >
+	<div class="row">
+
+		<% for x in @news["Data"] %>
+
+			<div class="col-md-4">
+				<div class="panel" style="width: 30rem;">
+					<img class="panel-img-top" src="<%= x["imageurl"] %>" alt= "<%= x["source"] %>">
+					<div class="panel-body">
+						<h5 class="panel-title"><%= x["title"] %> </h5>
+						<p class="panel-text"><%= x["body"] %></p>
+							<div class="caption card-footer">
+				            <ul class="list-inline">
+				              <li><i class="people lighter"></i>&nbsp;Upvotes: <%= x["upvotes"] %></li>
+				              <li></li>
+				              <li> <strong> <i class="people lighter"></i>&nbsp;Tags: </strong> <%= x["tags"] %></li>
+				            </ul>
+				          </div>
+
+						<a href="<%= x["url"] %>" class ="btn btn-secondary">Read More... </a>
+
+					</div>
+				</div>
+			</div>
+			<br/>	
+		<% end %>
+		
+
+
+
+	</div>
+</div>
