@@ -7,9 +7,6 @@ class HomeController < ApplicationController
     @uri = URI(@url)
     @response = Net::HTTP.get(@uri)
     @news = JSON.parse(@response)
-  
-
-	
   end
 
   def about
